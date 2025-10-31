@@ -1,25 +1,17 @@
 import HeroSection from "./components/HeroSection"
-import ProjectSection from "./components/ProjectSection"
 import ContactSection from "./components/ContactSection"
-import ServicesSection from "./components/ServicesSection"
-import MySkills from "./components/MySkills"
-import AboutMe from "./components/AboutMe"
-import Resume from "./components/Resume"
-import Navbar from "./components/Navbar"
+import Header from "./components/Navbar"
 import Footer from "./components/Footer"
+import AboutSection from "./components/AboutSection"
 
 function App() {
   return (
     <>
-    <Navbar/>
+    <Header/>
     <main>
       <HeroSection/>
-      <AboutMe/>
-      <Resume/>
-      <ProjectSection/>
-      <ServicesSection/>
-      <MySkills/>
-      <ContactSection/>
+      <AboutSection/>
+          <ContactSection/>
       </main>
       <Footer/>
     </>
