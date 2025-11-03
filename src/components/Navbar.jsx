@@ -1,56 +1,174 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 // Path ko apne logo ke hisab se theek karein
-import logo from '../assets/ChatGPT Image Oct 31, 2025, 11_24_12 AM.png';
+import logo from '../assets/header logo.png';
 
-// Step 1: GSAP aur ScrollToPlugin ko import karein
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-// Step 2: Plugin ko register karein (yeh GSAP ko batata hai ke ScrollToPlugin istemal karna hai)
 gsap.registerPlugin(ScrollToPlugin);
 
-const Header = () => {
+// Active Tab Color
+const ACTIVE_COLOR = '#ff9633'; 
+// Navigation Items List
+const NAV_ITEMS = ['HOME', 'ABOUT', 'PROJECTS', 'SERVICES', 'CONTACT', 'CORE'];
 
-  // Step 3: Click handle karne wala function banayein
+// Header Gradient for Scrolled State (Matching your main background)
+const HEADER_SCROLLED_BG = 'bg-gray-800 shadow-md'; // Tailwind classes for gradient are too verbose, using a solid dark color for scroll
+// If you want gradient on scroll, you need to use a single color for the Header or custom CSS.
+// Using fixed dark color for better readability on scroll.
+
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Header visibility
+  const [activeSection, setActiveSection] = useState('home'); 
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // === Scroll Direction & Background Change Logic ===
+  useEffect(() => {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      // Background Change Logic
+      setIsScrolled(window.scrollY > 50);
+
+      // Scroll Direction/Visibility Logic
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          // Header ko sirf tab hide/show karein jab scroll position 50px se zyada ho
+          if (currentScrollY > 50) {
+            // Scroll Down (Hide Header)
+            if (currentScrollY > lastScrollY && isVisible) {
+              setIsVisible(false);
+            } 
+            // Scroll Up (Show Header)
+            else if (currentScrollY < lastScrollY && !isVisible) {
+              setIsVisible(true);
+            }
+          } else {
+            // Top of the page (Always show header)
+            setIsVisible(true);
+          }
+          
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Observer setup (Remains the same for active link tracking)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { 
+        root: null, 
+        rootMargin: '-50% 0px -50% 0px', 
+        threshold: 0 
+      }
+    );
+
+    NAV_ITEMS.forEach(item => {
+      const idName = item.replace(/\s+/g, '-').toLowerCase();
+      const targetElement = document.getElementById(idName);
+      if (targetElement) {
+        observer.observe(targetElement);
+      }
+    });
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      NAV_ITEMS.forEach(item => {
+        const idName = item.replace(/\s+/g, '-').toLowerCase();
+        const targetElement = document.getElementById(idName);
+        if (targetElement) {
+          observer.unobserve(targetElement);
+        }
+      });
+    };
+  }, [lastScrollY, isVisible]); // Dependencies updated
+
+  // === Smooth Scroll and Active Link Logic (Click) ===
   const handleLinkClick = (e) => {
-    // a tag ke default behavior (turant jump karna) ko rokein
     e.preventDefault(); 
     
-    // Jis link par click hua hai, uski href value haasil karein (e.g., "#about")
-    const targetId = e.currentTarget.getAttribute('href');
+    const targetHref = e.currentTarget.getAttribute('href');
+    const targetId = targetHref.replace('#', '');
     
-    // GSAP ko istemal karke window ko aahista scroll karein
+    setActiveSection(targetId); 
+    
     gsap.to(window, { 
-      duration: 1.5, // Scroll ki speed (1.5 second)
-      scrollTo: targetId, // Kis element tak scroll karna hai
-      ease: 'power2.inOut' // Scroll ka animation style (smooth start and end)
+      duration: 1.5, 
+      scrollTo: targetHref, 
+      ease: 'power2.inOut' 
     });
   };
+  
+  // Header Classes for smooth show/hide animation
+  const headerVisibilityClass = isVisible ? 'translate-y-0' : '-translate-y-full';
+
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gray-800 text-gray-400 shadow-md">
+    <header 
+      className={`
+        fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${headerVisibilityClass}
+        ${isScrolled 
+          ? HEADER_SCROLLED_BG + ' text-gray-200' 
+          : 'bg-transparent text-gray-300' 
+        }
+    `}>
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
         
+        {/* Logo Container - Logo Height reduced to h-10 for better fit */}
         <div>
-          <img src={logo} alt="Company Logo" className="h-16 w-auto" />
+          {/* Logo ki height kam ki gayi hai taaki nav padding ko maintain kiya ja sake */}
+          <img src={logo} alt="Company Logo" className="h-10 w-auto" /> 
         </div>
         
         <div className="hidden md:flex space-x-8">
-          {['HOME', 'ABOUT', 'PROJECTS', 'SERVICES', 'CONTACT','CORE'].map((item) => (
-            <a 
-              href={`#${item.replace(/\s+/g, '-').toLowerCase()}`} // e.g., CONTACT US -> #contact-us
-              key={item} 
-              className="text-gray-300 font-medium  transition-colors cursor-pointer"
-              // Step 4: Har link ke onClick event par hamara function call karein
-              onClick={handleLinkClick}
-            >
-              {item}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item) => { 
+            const idName = item.replace(/\s+/g, '-').toLowerCase();
+            const isActive = activeSection === idName;
+
+            return (
+              <a 
+                href={`#${idName}`}
+                key={item} 
+                className={`
+                  font-medium transition-colors cursor-pointer relative group py-2
+                  ${isActive ? `text-[${ACTIVE_COLOR}]` : 'hover:text-[#ff9633]'}
+                `}
+                onClick={handleLinkClick}
+              >
+                {item}
+                {/* Active Tab Underline */}
+                <span 
+                  style={{ backgroundColor: ACTIVE_COLOR }}
+                  className={`
+                    absolute bottom-[3px] left-0 w-full h-[2px] transition-transform duration-500 origin-left 
+                    ${isActive 
+                      ? 'scale-x-100' 
+                      : 'scale-x-0 group-hover:scale-x-100' 
+                    }
+                  `}
+                ></span>
+              </a>
+            );
+          })}
         </div>
 
         <div className="md:hidden">
-          <button className="text-gray-800 focus:outline-none">
+          {/* Mobile Button */}
+          <button className="text-gray-300 focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>

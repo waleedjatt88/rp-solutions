@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link as ScrollLink } from 'react-scroll';
+// FaAngleDown icon import kiya
+import { FaAngleDown } from 'react-icons/fa';
 
-// Sirf woh image import karein jo aapko background mein lagani hai
 import backgroundImage from '../assets/ChatGPT Image Oct 31, 2025, 05_21_42 PM.png';
 
-// Animation ke liye variants (yeh wese hi rahenge)
 const textContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -21,7 +22,7 @@ const textItemVariants = {
 
 const HeroSection = () => {
   return (
-    <div id="home" className="relative w-full h-screen object-fit-cover ">
+    <div id="home" className="relative w-full h-screen  ">
       
       
       <div
@@ -32,23 +33,78 @@ const HeroSection = () => {
       
       <div className="absolute inset-0 bg-black/40" />
 
+      {/* Main Content Container */}
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 text-center text-white z-10 w-full px-4">
         <motion.div
           variants={textContainerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.h2 variants={textItemVariants} className="text-lg tracking-widest">
-            HIGH PERFORMANCE
+          <motion.h2 variants={textItemVariants} className="text-lg tracking-widest uppercase mb-2">
+            5+ Years of Excellence
           </motion.h2>
-          <motion.h1 variants={textItemVariants} className="text-5xl md:text-6xl font-bold my-4">
-            Robust and Speedy
+          <motion.h1 variants={textItemVariants} className="text-4xl md:text-6xl font-extrabold my-4">
+             Your Complete Service Partner
           </motion.h1>
-          <motion.button variants={textItemVariants} className="mt-4 px-8 py-3 border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors font-semibold">
-            LEARN MORE
-          </motion.button>
+          
+
+          <motion.p variants={textItemVariants} className="max-w-3xl mx-auto text-m md:text-sm mb-6 hidden sm:block">
+              We provide a wide range of professional services, dedicated to meeting all your needs with quality and expertise.
+          </motion.p>
+
+          <motion.div variants={textItemVariants}>
+            <ScrollLink
+                to="services" 
+                spy={true}
+                smooth={true}
+                offset={-70} 
+                duration={2000} 
+                // Liquid Fill Classes: group, relative, overflow-hidden
+                className="group relative inline-block mt-4 px-8 py-3 border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
+            >
+                {/* 1. Liquid Fill Layer (White) */}
+                <span 
+                    className="absolute inset-0 bg-white transition-all duration-500 ease-in-out transform scale-y-0 group-hover:scale-y-100 origin-bottom"
+                    aria-hidden="true"
+                ></span>
+
+                {/* 2. Button Text (z-10 to stay on top) */}
+                <span className="relative z-10 transition-colors duration-500 group-hover:text-black text-sm sm:text-base">
+                    EXPLORE SERVICES
+                </span>
+            </ScrollLink>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll Down Arrow / Link */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+        <ScrollLink
+            to="profile" // Target section ID (jahan profile component render ho raha hai)
+            spy={true}
+            smooth={true}
+            offset={-70} 
+            duration={1500} // 1500ms duration
+            className="cursor-pointer"
+        >
+            <motion.div
+                className="p-3 rounded-full bg-white shadow-lg" // White background, rounded circle
+                // Animated bounce effect (Framer Motion)
+                animate={{ 
+                    y: [0, -10, 0], // Move up-down-up
+                }}
+                transition={{ 
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    repeat: Infinity, // Repeat indefinitely
+                    repeatType: "loop"
+                }}
+            >
+                <FaAngleDown className="w-6 h-6" style={{ color: '#ff9633' }} /> {/* Orange arrow */}
+            </motion.div>
+        </ScrollLink>
+      </div>
+      
     </div>
   );
 };

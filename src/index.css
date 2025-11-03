@@ -6,3 +6,118 @@
 body {
   @apply font-figtree;
 }
+/* src/index.css */
+
+/* Add this custom CSS for the input hover effect */
+.input-hover-effect {
+  position: relative; /* Essential for positioning the pseudo-element */
+  z-index: 1; /* Ensures the input content is above the effect */
+}
+
+/* This is the white background that will animate */
+.input-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff; /* The color on hover */
+  border-radius: 0.5rem; /* Match the input's border-radius */
+  transform: scale(0); /* Start scaled down to nothing in the center */
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out; /* The slow animation */
+  z-index: -1; /* Place it behind the text */
+}
+
+/* When you hover the input, the ::before element scales up */
+.input-hover-effect:hover::before {
+  transform: scale(1);
+}
+
+/* Change text and placeholder color on hover to be visible on the new white background */
+.input-hover-effect:hover {
+  color: #1f2937; /* gray-800 */
+}
+.input-hover-effect:hover::placeholder {
+  color: #6b7280; /* gray-500 */
+}
+
+/* index.css or global.css */
+
+@keyframes ping-custom {
+  0% {
+    transform: scale(1);
+    opacity: 0.75; /* Shuru mein high opacity */
+  }
+  100% {
+    /* Scale bada rakho taaki screen ke end tak jaye */
+    transform: scale(1.5); /* 1.5 times original size (300vw/300vh) */
+    opacity: 0; /* End mein fade out */
+  }
+}.carousel-item {
+    /* Yah property item par apply hogi, jisse woh smooth move ho */
+    transition: transform .8s cubic-bezier(0, 0.02, 0, 1), opacity .8s cubic-bezier(0, 0.02, 0, 1);
+    transform-origin: 0% 100%; /* Original CSS transform-origin */
+}
+
+.carousel-box {
+    /* Content box transition */
+    transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+}
+
+/* Agar aapko original fonts Orelo-sw-db chahiye toh @font-face rule bhi add karna hoga */
+/* index.css or global.css */
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap");
+
+/* --- Custom Swap Keyframes (Very Important) --- */
+/* Base Keyframes */
+@keyframes swap {
+  30% {
+    /* translate(calc(var(--x) - 250px), -50%) scale(0.85) rotate(-5deg) rotateY(65deg) */
+    transform: translate(calc(-50% - 250px), -50%) scale(0.85) rotate(-5deg) rotateY(65deg);
+  }
+  100% {
+    /* transform: translate(calc(var(--x) - 30px), -50%) scale(0.5); */
+    transform: translate(calc(-50% - 30px), -50%) scale(0.5);
+    z-index: -1;
+  }
+}
+
+/* Media Query Overrides for Keyframes */
+@media (max-width: 1200px) {
+  @keyframes swap {
+    30% {
+      transform: translate(calc(-50% - 200px), -50%) scale(0.85) rotate(-5deg) rotateY(65deg);
+    }
+    100% {
+      transform: translate(calc(-50% - 30px), -50%) scale(0.5);
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  @keyframes swap {
+    30% {
+      transform: translate(calc(-50% - 150px), -50%) scale(0.85) rotate(-5deg) rotateY(65deg);
+    }
+    100% {
+      transform: translate(calc(-50% - 30px), -50%) scale(0.5);
+      z-index: -1;
+    }
+  }
+}
+
+/* Apply swap class animation */
+.card.swap {
+  animation: swap 1.3s ease-out forwards;
+}
+
+/* Basic Body/Main Styles for context (Optional if you have a base.css) */
+body {
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
+}

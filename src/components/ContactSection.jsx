@@ -19,7 +19,7 @@ const ContactSection = () => {
 
           {/* Left Column: Contact Info */}
           <div className="lg:w-1/3 text-left z-10">
-            <p className="text-gray-500 font-semibold tracking-wider">CONTACT US</p>
+            <p className="text-[#ff9633] font-semibold tracking-wider">CONTACT US</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 my-4">
               Feel free to keep in touch with us!
             </h2>
@@ -27,21 +27,21 @@ const ContactSection = () => {
             <div className="space-y-6 mt-8">
               {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="bg-teal-500 text-white rounded-full p-3">
+                <div className="bg-[#ff9633] text-white rounded-full p-3">
                   <FaPhoneAlt size={20} />
                 </div>
                 <span className="text-gray-600 text-lg">010-020-0860</span>
               </div>
               {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="bg-teal-500 text-white rounded-full p-3">
+                <div className="bg-[#ff9633] text-white rounded-full p-3">
                   <FaEnvelope size={20} />
                 </div>
                 <span className="text-gray-600 text-lg">info@company.com</span>
               </div>
               {/* Website */}
               <div className="flex items-center gap-4">
-                <div className="bg-teal-500 text-white rounded-full p-3">
+                <div className="bg-[#ff9633] text-white rounded-full p-3">
                   <FaGlobe size={20} />
                 </div>
                 <span className="text-gray-600 text-lg">www.company.com</span>
@@ -83,7 +83,7 @@ const ContactSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95, backgroundColor: '#ff9633' }} // Active state color (teal-600)
-                className="group flex items-center justify-center gap-3 bg-[#ff9633] text-white font-bold py-4 px-8 rounded-full transition-colors duration-300 hover:bg-[#ff9633]"
+  className="group flex items-center justify-center gap-3 bg-[#ff9633] text-white font-bold py-3 px-6 text-sm rounded-full transition-colors duration-300  sm:py-4 sm:px-8 sm:text-base"
               >
                 SEND MESSAGE NOW
                 <motion.div

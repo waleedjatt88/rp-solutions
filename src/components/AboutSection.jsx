@@ -1,47 +1,76 @@
+// src/components/About.jsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);
+
+
+import aboutImage from '../assets/Workplace Focus and Determination.png'; 
+
 const About = () => {
+  
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    
+    gsap.to(window, { 
+      duration: 1.5, 
+      scrollTo: "#core", 
+      ease: 'power2.inOut' 
+    });
+  };
+
   return (
     <section id="about" className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto px-4">
-        {/* Main grid for two columns */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Heading and Button */}
-          <div className="text-left">
-            <p className="text-green-600 font-semibold tracking-wider mb-4">
-              ABOUT US
+          <div className="text-left"> 
+            <p className="text-[#ff9633] font-semibold tracking-widest text-lg mb-4">
+              ABOUT 
             </p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 leading-tight">
-              We create meaningful space that benefits all
-            </h2>
             
-            <motion.button
+           
+            
+            <div className="text-justify text-gray-500 leading-relaxed space-y-6">
+                <p>
+                    <strong className="font-bold text-[#ff9633]">RP Solutions</strong> is a trusted provider of diverse professional services, backed by 5+ years of dedicated experience in the industry. We are committed to enhancing quality and convenience in everyday life for our clients.
+                
+                
+                    Our highly trained team excels in key areas like IT Solutions, Consulting, and Technical Support, ensuring every project meets the highest standards of care and attention. We pride ourselves on the values of integrity, transparency, and excellence.
+                
+                
+                    We have successfully completed numerous major projects, with a significant portion being in the Government sector, where we maintain a strong and reliable reputation for timely and high-quality delivery. Our goal is to be the reliable partner that consistently meets and exceeds client expectations.
+                </p>
+            </div>
+
+            <motion.a
+              href="#core" 
+              onClick={handleButtonClick} 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-6 rounded-full mt-8 transition-colors duration-300 hover:bg-green-600"
-            >
-              READ MORE
-              <div className="transition-transform duration-300 group-hover:translate-x-1">
+className="group inline-flex items-center justify-center gap-3 bg-[#ff9633] text-white font-bold py-3 px-6 rounded-full mt-8 transition-colors duration-300 hover:bg-gray-500 cursor-pointer" >
+              LEARN MORE
+              <div className="transition-transform  duration-300 group-hover:translate-x-1">
                 <FaArrowRight />
               </div>
-            </motion.button>
+            </motion.a>
           </div>
 
-          {/* Right Column: Paragraphs */}
-          <div className="text-gray-600 text-base leading-relaxed space-y-4">
-            <p>
-              <strong className="font-bold text-blue-500">INDIGENOUS</strong> is a multidisciplinary design practice delivering 28+ years of design excellence in Australia and the Asia Pacific. We are committed to connecting people to place through design. From large to small projects, we offer meticulous design underpinned by a clearly defined process and efficiency of delivery. The result is creative and effective designs that are culturally, socially, and environmentally enduring, as well as functionally and commercially grounded.
-            </p>
-            <p>
-              You will need to talk to us if you want to redistribute this template. Thank you,{' '}
-              <a href="#" className="text-blue-500 underline hover:text-blue-700">
-                talk to us
-              </a>{' '}
-              if you have anything.
-            </p>
+          <div className="relative overflow-hidden rounded-xl shadow-2xl">
+            <img 
+              src={aboutImage} 
+              alt="About Us Image" 
+              className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-[1.03]"
+            />
+            <div 
+              className="absolute inset-0 bg-black/10 mix-blend-multiply opacity-50"
+              aria-hidden="true"
+            />
           </div>
 
         </div>
