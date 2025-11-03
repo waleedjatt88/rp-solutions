@@ -53,7 +53,7 @@ const About = () => {
               onClick={handleButtonClick} 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-className="group inline-flex items-center justify-center gap-3 bg-[#ff9633] text-white font-bold py-3 px-6 rounded-full mt-8 transition-colors duration-300 hover:bg-gray-500 cursor-pointer" >
+className="group inline-flex items-center justify-center gap-3 bg-[#ff9633] text-white font-bold py-3 px-6 rounded-full mt-8 transition-colors duration-300  cursor-pointer" >
               LEARN MORE
               <div className="transition-transform  duration-300 group-hover:translate-x-1">
                 <FaArrowRight />

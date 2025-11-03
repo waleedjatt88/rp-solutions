@@ -19,15 +19,15 @@ const quickLinks = [
 ];
 
 const servicesLinks = [
-  'Web Design',
-  'Web Development',
-  'UI/UX Designer',
-  'MERN STACK Developer',
-  'Video Editor',
+  'Carpenter Services',
+  'House Keeper Services',
+  'AC-Technician Services',
+  'Welder Services',
+  'Electrician Services',
 ];
 
 export default function Footer() {
-  const phoneNumber = '03174103743';
+  const phoneNumber = '0314 0840821';
   const [tooltipText, setTooltipText] = useState(` Click to copy`);
 
   const handleCopy = () => {
@@ -40,23 +40,27 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-800 text-gray-400 py-16">
+    // Footer background updated with the gradient
+    <footer 
+        className="text-gray-400 py-16"
+        style={{ background: 'linear-gradient(145deg, #55566a 0%, #131318 76%)' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              <span className="text-gray-400">PORT</span>
-              <span className="text-[#f05228]">FOLIO</span>
+              <span className="text-gray-200">RP</span> {/* Text color made lighter for better contrast on dark gradient */}
+              <span className="text-[#ff9633]"> Solutions</span> {/* Assuming your portfolio is RP Solutions now */}
             </h3>
-            <div className="pr-4 text-sm leading-relaxed space-y-4">
-              <p>MERN STACK Developer specializing in building fast and responsive web interfaces.</p>
-              <p>A passionate Web Developer with 01+ years of experience building responsive, user-friendly websites for clients worldwide.</p>
+            <div className="pr-4 text-sm text-justify leading-relaxed space-y-4">
+              <p>WE BELIEVE IN PROVIDING RELIABLE AND EFFICIENT SERVICES THAT ELEVATE THE STANDARD OF LIVING FOR OUR CLIENTS.</p>
+              <p> WITH A FOCUS ON QUALITY AND PROFESSIONALISM, WE STRIVE TO BUILD LASTING RELATIONSHIPS BASED ON TRUST AND SATISFACTION.</p>
             </div>
           </div>
 
           <div>
-            <h3 className="text-xl font-bold text-[#f05228] mb-4">Links</h3>
+            <h3 className="text-xl font-bold text-[#ff9633] mb-4">Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((item) => (
                 <li key={item.name}>
@@ -64,7 +68,7 @@ export default function Footer() {
                     to={item.link} 
                     smooth={true} 
                     duration={800}
-                    className="flex items-center hover:text-[#f05228] transition-colors cursor-pointer"
+                    className="flex items-center hover:text-[#ff9633] transition-colors cursor-pointer"
                   >
                     <span className="mr-2">&#8594;</span> {item.name}
                   </Link>
@@ -74,7 +78,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold text-[#f05228] mb-4">Services</h3>
+            <h3 className="text-xl font-bold text-[#ff9633] mb-4">Services</h3>
             <ul className="space-y-3">
               {servicesLinks.map((service) => (
                 <li key={service} className="flex items-center">
@@ -85,14 +89,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold text-[#f05228] mb-4">Have a Questions?</h3>
+            <h3 className="text-xl font-bold text-[#ff9633] mb-4">Have a Questions?</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <FaMapMarkerAlt className="text-[#f05228] mt-1 mr-3 flex-shrink-0" />
+                <FaMapMarkerAlt className="text-[#ff9633] mt-1 mr-3 flex-shrink-0" />
                 <span>Punjab, Pakistan</span>
               </li>
               <li className="relative flex items-center group">
-                <FaPhoneAlt className="text-[#f05228] mr-3" />
+                <FaPhoneAlt className="text-[#ff9633] mr-3" />
                 <span onClick={handleCopy} className="cursor-pointer">
                   {phoneNumber}
                 </span>
@@ -101,23 +105,23 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="text-[#f05228] mr-3" />
-                <a href="mailto:sendtomadnan@gmail.com" className="hover:text-[#f05228] transition-colors">
-                  sendtomadnan@gmail.com
+                <FaEnvelope className="text-[#ff9633] mr-3" />
+                <a href="mailto:rpsolution21@gmail.com" className="hover:text-[#ff9633] transition-colors">
+                  rpsolution21@gmail.com
                 </a>
               </li>
             </ul>
             <div className="flex space-x-4 mt-6">
-              <a href="https://linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
+              <a href="https://linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaLinkedin className="text-white" />
               </a>
-              <a href="https://github.com/codewith-adnan" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
+              <a href="https://github.com/codewith-adnan" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaGithub className="text-white" />
               </a>
-              <a href="https://www.facebook.com/share/1CvChNiyFz/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
+              <a href="https://www.facebook.com/share/1CvChNiyFz/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaFacebookF className="text-white" />
               </a>
-              <a href="https://wa.me/923174103743" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
+              <a href="https://wa.me/923174103743" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaWhatsapp className="text-white" />
               </a>
             </div>
@@ -125,7 +129,7 @@ export default function Footer() {
 
         </div>
         
-        <div className="mt-16 pt-8 border-t border-gray-700 text-center">
+        <div className="mt-14 pt-8 border-t border-gray-700 text-center">
           <p>&copy; {new Date().getFullYear()} All rights reserved. .</p>
         </div>
 
