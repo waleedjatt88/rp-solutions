@@ -2,7 +2,7 @@
 
 import React, { useState,  useCallback } from 'react';
 import { FaArrowRight } from 'react-icons/fa'; 
-import { motion } from 'framer-motion'; // motion import kiya gaya (aapka button use kar raha hai)
+import { motion } from 'framer-motion'; 
 
 import janitorialImage from '../assets/janitorial.png'; 
 import carpenterImage from '../assets/carpenter.png';
@@ -118,13 +118,12 @@ const Projects = () => {
                <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    // Added flex and gap for icon alignment
                     className="group flex items-center justify-center gap-3 bg-[#ff9633] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-200 cursor-pointer hover:shadow-xl hover:scale-[0.98] mx-auto lg:mx-0"
                     onClick={handleNextClick}
                 >
                     NEXT
                     <div className="transition-transform duration-300 group-hover:translate-x-1">
-                        <FaArrowRight className="w-4 h-4" /> {/* Icon */}
+                        <FaArrowRight className="w-4 h-4" /> 
                     </div>
                 </motion.button>
             </div>

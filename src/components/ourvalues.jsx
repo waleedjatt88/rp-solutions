@@ -3,14 +3,12 @@
 import React from 'react';
 import { BsBullseye, BsLightbulb, BsGem, BsFlag } from 'react-icons/bs';
 
-// --- Main Component ---
 const OurValues = () => {
     
   const coreValues = [
     {
       title: "Our Mission",
       description: "We aim to deliver comprehensive services with a focus on quality and customer satisfaction. By staying adaptive and innovative, we strive to be the go-to choice for maintenance and technical services.",
-      // CHANGE 1: Icon size ko thora chota kiya
       icon: <BsBullseye className="w-9 h-9 text-white" />, 
       iconColor: 'from-[#ff9633] to-[#ffb033]',
     },
@@ -41,7 +39,6 @@ const OurValues = () => {
   return (
     <section id='core' className="bg-white font-sans py-16 sm:py-24">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16">
             <p className="mt-2 text-3xl font-extrabold text-[#ff9633] sm:text-4xl">
               Our Core Principles
@@ -51,28 +48,21 @@ const OurValues = () => {
             </p>
         </div>
 
-        {/* Cards Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {coreValues.map((value) => (
             <div key={value.title} className={`p-1.5 rounded-t-[60px] rounded-b-[20px] ${themeColor.bgGradient} shadow-2xl`}>
-                {/* CHANGE 2: Card ki padding kam ki (p-8 se p-6) */}
                 <div className="relative bg-white rounded-t-[60px] rounded-b-[12px] h-full p-6 text-center flex flex-col items-center">
                     
                     <div className="absolute top-6 right-8">
                         <BsFlag className={`w-8 h-8 ${themeColor.primary}`}/>
                     </div>
 
-                    {/* --- Shiny Icon Container --- */}
-                    {/* CHANGE 3: Icon container ka size aur negative margin kam kiya */}
                     <div className={`-mt-14 w-20 h-20 flex items-center justify-center bg-gradient-to-br ${value.iconColor} rounded-full shadow-lg border-4 border-white`}>
                         {value.icon}
                     </div>
 
-                    {/* Title */}
-                    {/* CHANGE 4: Title ka top margin kam kiya (mt-6 se mt-4) */}
                     <h3 className="mt-4 text-2xl font-bold text-gray-700">{value.title}</h3>
 
-                    {/* Description */}
                     <div className="mt-3 text-gray-500 flex-grow">
                         {Array.isArray(value.description) ? (
                             <ul className="text-justify space-y-1">
@@ -83,7 +73,6 @@ const OurValues = () => {
                         )}
                     </div>
                     
-                    {/* Step Number div ko hata diya gaya hai taake faltu space na le */}
                 </div>
             </div>
           ))}

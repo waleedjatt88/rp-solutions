@@ -1,9 +1,8 @@
 // src/components/Services.jsx
 
 import React, { useState } from 'react';
-import { services } from '../Data/servicedata'; // Make sure this path is correct
+import { services } from '../Data/servicedata'; 
 
-// ZAROORI: In imports ko add kiya gaya hai
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -13,7 +12,6 @@ const Services = () => {
   const handleNext = () => {
     setItems((prevItems) => {
       const newItems = [...prevItems];
-      // Pehla item nikal kar aakhir mein jodna
       newItems.push(newItems.shift()); 
       return newItems;
     });
@@ -22,16 +20,13 @@ const Services = () => {
   const handlePrev = () => {
     setItems((prevItems) => {
       const newItems = [...prevItems];
-      // Aakhri item nikal kar shuru mein jodna
       newItems.unshift(newItems.pop()); 
       return newItems;
     });
   };
 
   return (
-    // FIX: "overflow-hidden" class yahan add ki gayi hai.
-    // Isse woh elements chup jayenge jo (transform: translateX) ke zariye 
-    // viewport se bahar hain, aur scrollbar khatam ho jayega.
+    
     <div id='services' className="relative w-full h-screen overflow-hidden">
       <div className="w-full h-full">
         {items.map((service, index) => (
@@ -40,7 +35,6 @@ const Services = () => {
             className="item absolute w-full h-full bg-cover bg-center transition-transform duration-500 ease-in-out"
             style={{
               backgroundImage: `url(${service.image})`,
-              // Logic sahi hai: index=1 wala item center (0%) mein hai
               transform: `translateX(${(index - 1) * 100}%)`, 
               opacity: index === 1 ? 1 : 0.7,
               zIndex: items.length - Math.abs(index - 1),
@@ -71,7 +65,6 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
       <div className="absolute bottom-4 right-4 z-50 flex gap-2 sm:bottom-10 sm:right-10 sm:gap-4 sm:px-8 sm:py-3 sm:text-base"
                 >
         <button

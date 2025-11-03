@@ -35,8 +35,7 @@ function App() {
             <AboutSection />
             <Services />
             <ContactSection />
-                        <Projects/>
-
+              <Projects/>
             <OurValues />
           </main>
           <Footer />
