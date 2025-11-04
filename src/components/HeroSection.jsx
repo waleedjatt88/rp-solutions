@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
-import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleDown, FaCheckCircle, FaStar, FaBuilding } from 'react-icons/fa'; // Added new icons
 
 import backgroundImage from '../assets/ChatGPT Image Oct 31, 2025, 05_21_42 PM.png';
 
@@ -18,10 +18,32 @@ const textItemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 };
 
+const rotatingTextVariants = {
+  enter: { opacity: 0, y: 20 },
+  center: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.5 } },
+};
 
 const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const rotatingSentences = [
+    { text: '5+ Years of Excellence', icon: <FaStar className="inline-block mr-2" /> },
+    { text: '09+ Govt. & Public Projects Completed', icon: <FaBuilding className="inline-block mr-2" /> }, // Changed icon here
+    { text: '100% Project Success Rate (No Complaints)', icon: <FaCheckCircle className="inline-block mr-2" /> },
+    { text: 'Positive Client Feedback', icon: <FaStar className="inline-block mr-2" /> },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % rotatingSentences.length);
+    }, 5000); // Change sentence every 5 seconds
+    return () => clearInterval(interval);
+  }, [rotatingSentences.length]);
+
   return (
-    <div id="home" className="relative w-full h-screen  ">
+    <div id="home" 
+    className="relative w-full h-screen object-cover overflow-hidden "
+    >
       
       
       <div
@@ -39,18 +61,30 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h2 variants={textItemVariants} className="text-lg tracking-widest uppercase mb-2">
-            5+ Years of Excellence
-          </motion.h2>
-          <motion.h1 variants={textItemVariants} className="text-4xl md:text-6xl font-extrabold my-4">
+          
+          <motion.h1 variants={textItemVariants} className="text-1xl md:text-6xl font-extrabold my-4">
              Your Complete Service Partner
           </motion.h1>
           
 
-          <motion.p variants={textItemVariants} className="max-w-3xl mx-auto text-m md:text-sm mb-6 hidden sm:block">
-              We provide a wide range of professional services, dedicated to meeting all your needs with quality and expertise.
+          <motion.p variants={textItemVariants} className="max-w-4xl mx-auto text-sm md:text-m mb-6 hidden ">
+              We provide a wide range of professional services, dedicated to meeting all your needs with quality & expertise.
           </motion.p>
-
+          
+          <AnimatePresence mode="wait">
+            <motion.h2 
+              key={currentIndex}
+              variants={rotatingTextVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              className="text-lg tracking-widest uppercase mb-2"
+            >
+              {rotatingSentences[currentIndex].icon}
+              {rotatingSentences[currentIndex].text}
+            </motion.h2>
+          </AnimatePresence>
+          
           <motion.div variants={textItemVariants}>
             <ScrollLink
                 to="services" 
@@ -58,14 +92,18 @@ const HeroSection = () => {
                 smooth={true}
                 offset={-70} 
                 duration={2000} 
-                className="group relative inline-block mt-4 px-8 py-3 border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
+                className="group relative inline-block mt-4 
+                          px-4 py-2 sm:px-8 sm:py-3   // Mobile: px-4 py-2 (smaller), SM+: px-8 py-3 (original/larger)
+                          border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
             >
                 <span 
                     className="absolute inset-0 bg-white transition-all duration-500 ease-in-out transform scale-y-0 group-hover:scale-y-100 origin-bottom"
                     aria-hidden="true"
                 ></span>
 
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-black text-sm sm:text-base">
+                <span className="relative z-10 transition-colors duration-500 group-hover:text-black 
+                          text-xs sm:text-base  // Mobile: text-xs (smaller), SM+: text-base (original)
+                ">
                     EXPLORE SERVICES
                 </span>
             </ScrollLink>
@@ -73,7 +111,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10">
         <ScrollLink
             to="profile" 
             spy={true}

@@ -103,7 +103,7 @@ const Projects = () => {
             
             <div className="content lg:pl-[120px] lg:pr-0 px-6 pt-10 pb-0 text-center lg:text-left text-[#c7c7c7c9] user-select-none lg:order-none order-2">
                 <h1 
-                    className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
+                    className="font-serif text-xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4"
                     style={{ 
                         background: '-webkit-linear-gradient(0deg, #ff9633, #ffc16f)',
                         WebkitBackgroundClip: 'text',
@@ -112,7 +112,7 @@ const Projects = () => {
                 >
                     {contentData[currentContentIndex].name} 
                 </h1>
-                <p className="text-lg md:text-xl leading-relaxed lg:pr-[100px] mb-6">
+                <p className="text-m md:text-lg leading-relaxed lg:pr-[100px] mb-6">
                     {contentData[currentContentIndex].text} 
                 </p>
                <motion.button 
@@ -136,7 +136,7 @@ const Projects = () => {
                     return (
                         <div
                             key={image} 
-                            className={`card absolute transform-gpu w-[250px] h-[380px] sm:w-[350px] sm:h-[500px] rounded-[2rem] shadow-2xl transition-transform duration-600 ease-out`}
+                            className={`card absolute transform-gpu w-[250px] h-[380px] sm:w-[450px] sm:h-[500px] rounded-[2rem] shadow-2xl transition-transform duration-600 ease-out`}
                             style={{
                                 top: '',
                                 left: '',
