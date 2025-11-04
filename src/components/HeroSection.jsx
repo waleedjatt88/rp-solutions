@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { FaAngleDown } from 'react-icons/fa';
 
-import backgroundImage from '../../public/ChatGPT Image Oct 31, 2025, 05_21_42 PM.png';
+import backgroundImage from '../assets/Generated Image November 04, 2025 - 12_50PM.png';
 
 const textContainerVariants = {
   hidden: { opacity: 0 },
