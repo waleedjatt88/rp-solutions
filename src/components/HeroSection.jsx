@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
-// FaAngleDown icon import kiya
 import { FaAngleDown } from 'react-icons/fa';
 
-import backgroundImage from '../assets/ChatGPT Image Oct 31, 2025, 05_21_42 PM.png';
+import backgroundImage from '../../public/ChatGPT Image Oct 31, 2025, 05_21_42 PM.png';
 
 const textContainerVariants = {
   hidden: { opacity: 0 },
@@ -59,16 +58,13 @@ const HeroSection = () => {
                 smooth={true}
                 offset={-70} 
                 duration={2000} 
-                // Liquid Fill Classes: group, relative, overflow-hidden
                 className="group relative inline-block mt-4 px-8 py-3 border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
             >
-                {/* 1. Liquid Fill Layer (White) */}
                 <span 
                     className="absolute inset-0 bg-white transition-all duration-500 ease-in-out transform scale-y-0 group-hover:scale-y-100 origin-bottom"
                     aria-hidden="true"
                 ></span>
 
-                {/* 2. Button Text (z-10 to stay on top) */}
                 <span className="relative z-10 transition-colors duration-500 group-hover:text-black text-sm sm:text-base">
                     EXPLORE SERVICES
                 </span>
@@ -77,26 +73,24 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Down Arrow / Link */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
         <ScrollLink
-            to="profile" // Target section ID (jahan profile component render ho raha hai)
+            to="profile" 
             spy={true}
             smooth={true}
             offset={-70} 
-            duration={1500} // 1500ms duration
+            duration={1500} 
             className="cursor-pointer"
         >
             <motion.div
-                className="p-3 rounded-full bg-white shadow-lg" // White background, rounded circle
-                // Animated bounce effect (Framer Motion)
+                className="p-3 rounded-full bg-white shadow-lg" 
                 animate={{ 
-                    y: [0, -10, 0], // Move up-down-up
+                    y: [0, -10, 0], 
                 }}
                 transition={{ 
                     duration: 1.5,
                     ease: "easeInOut",
-                    repeat: Infinity, // Repeat indefinitely
+                    repeat: Infinity, 
                     repeatType: "loop"
                 }}
             >
