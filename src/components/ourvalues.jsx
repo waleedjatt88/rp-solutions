@@ -19,7 +19,7 @@ const OurValues = () => {
       iconColor: 'from-[#ff9633] to-[#ffb033]',
     },
     {
-      title: "Why Choose Me",
+      title: "Why Choose Us",
       description: [ 
         "Skilled and trained technicians in every service area.",
         "Consistent and dependable solutions for every project.",
