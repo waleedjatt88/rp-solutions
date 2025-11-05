@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaAngleLeft, FaAngleRight, FaTimes } from 'react-icons/fa'; 
-
+import { motion } from 'framer-motion';
+import { FaArrowRight } from 'react-icons/fa';
 
 import ceoImage from '../assets/ceo.jpg'; 
 import partner1Image from '../assets/partner 1.jpg';
@@ -158,7 +159,11 @@ const Profile = () => {
     };
 
     return (
-        <div id="profile" className="relative h-screen w-full flex items-center justify-center bg-gray-900 overflow-hidden">
+        <div 
+            id="profile" 
+            className="relative h-screen w-full flex items-center justify-center overflow-hidden" // Removed bg-gray-900
+            style={{ background: 'linear-gradient(145deg, #55566a 0%, #131318 76%)' }} // Added the gradient here
+        >
             
             <div className="relative w-full max-w-7xl h-[600px] md:h-[700px] lg:h-[800px]">
                 
@@ -185,23 +190,19 @@ const Profile = () => {
                                         <div className="title text-m sm:text-lg font-semibold mb-2">{item.title}</div>
                                         <div className="des text-sm sm:text-m mb-2 sm:mb-6 max-w-md">{item.des}</div>
                                         
-                                        <button
-                                            onClick={() => handleSeeMore(item)}
-                                            className="btn-14 relative inline-block  py-2 px-6 rounded-full text-base font-bold text-white overflow-hidden group w-fit"
-                                        >
-                                            <span 
-                                                className="absolute inset-0 transition-all duration-300 transform -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
-                                                style={{ 
-                                                    backgroundImage: 'linear-gradient(315deg, #ff9633 45%, #f6fc9c 74%)', 
-                                                    zIndex: -1,
-                                                    filter: 'drop-shadow(2px 2px 2px rgba(255,255,255,.5)) drop-shadow(7px 7px 20px rgba(0,0,0,.1))' 
-                                                }}
-                                                aria-hidden="true"
-                                            ></span>
-                                            <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                                                See More
-                                            </span>
-                                        </button>
+                                       <motion.button
+    onClick={() => handleSeeMore(item)} 
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="group mt-6 flex items-center justify-center gap-2 rounded-full bg-[#ff9633] px-4 py-1.5 text-sm font-bold text-white shadow-lg transition-colors duration-300 sm:px-6 sm:py-2 sm:text-base w-fit" // Simplified className for direct styling
+>
+    <span className="relative z-10">
+        See More
+    </span>
+    <div className="transition-transform duration-300 group-hover:translate-x-1">
+        <FaArrowRight />
+    </div>
+</motion.button>
                                     </div>
                                 )}
                                 
@@ -233,7 +234,8 @@ const Profile = () => {
 
             <DetailsModal item={selectedItem} onClose={handleCloseModal} />
         </div>
-    );
+    );        
+
 };
 
 export default Profile;

@@ -4,10 +4,9 @@ import {
   FaMapMarkerAlt, 
   FaPhoneAlt, 
   FaEnvelope, 
-  FaGithub, 
   FaFacebookF, 
-  FaLinkedin,
-  FaWhatsapp
+  FaWhatsapp,
+  FaInstagram
 } from 'react-icons/fa';
 
 const quickLinks = [
@@ -49,7 +48,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
           <div>
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-3xl font-bold mb-4">
               <span className="text-gray-200">RP</span> {/* Text color made lighter for better contrast on dark gradient */}
               <span className="text-[#ff9633]"> Solutions</span> {/* Assuming your portfolio is RP Solutions now */}
             </h3>
@@ -93,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="text-[#ff9633] mt-1 mr-3 flex-shrink-0" />
-                <span>Punjab, Pakistan</span>
+                <span>Islamabad, Pakistan</span>
               </li>
               <li className="relative flex items-center group">
                 <FaPhoneAlt className="text-[#ff9633] mr-3" />
@@ -113,15 +112,13 @@ export default function Footer() {
             </ul>
             <div className="flex space-x-4 mt-6">
               <a href="https://linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
-                <FaLinkedin className="text-white" />
+                <FaInstagram className="text-white" />
               </a>
-              <a href="https://github.com/codewith-adnan" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
-                <FaGithub className="text-white" />
-              </a>
-              <a href="https://www.facebook.com/share/1CvChNiyFz/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
+              
+              <a href="https://www.facebook.com/share/p/1Bog2PJqEK/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaFacebookF className="text-white" />
               </a>
-              <a href="https://wa.me/923174103743" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
+              <a href="https://wa.me/923140840821" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaWhatsapp className="text-white" />
               </a>
             </div>

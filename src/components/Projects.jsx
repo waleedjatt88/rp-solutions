@@ -101,9 +101,9 @@ const Projects = () => {
     return (
         <main id='projects' className="grid grid-cols-1 lg:grid-cols-2 grid-rows-[4fr_3fr] lg:grid-rows-1 place-items-center min-h-screen bg-gradient-to-br from-[#55566a] to-[#131318]">
             
-            <div className="content lg:pl-[120px] lg:pr-0 px-6 pt-10 pb-0 text-center lg:text-left text-[#c7c7c7c9] user-select-none lg:order-none order-2">
+            <div className="content lg:pl-[120px] lg:pr-0 px-6 pt-6 pb-2 text-center lg:text-left text-[#c7c7c7c9] user-select-none lg:order-none order-2">
                 <h1 
-                    className="font-serif text-xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4"
+                    className="font-serif text-xl md:text-3xl lg:text-4xl font-bold leading-tight mb-3"
                     style={{ 
                         background: '-webkit-linear-gradient(0deg, #ff9633, #ffc16f)',
                         WebkitBackgroundClip: 'text',
@@ -112,7 +112,7 @@ const Projects = () => {
                 >
                     {contentData[currentContentIndex].name} 
                 </h1>
-                <p className="text-m md:text-lg leading-relaxed lg:pr-[100px] mb-6">
+                <p className="text-m md:text-lg text-justify leading-relaxed lg:pr-[100px] mb-4">
                     {contentData[currentContentIndex].text} 
                 </p>
                <motion.button 
@@ -128,7 +128,7 @@ const Projects = () => {
                 </motion.button>
             </div>
 
-            <div className="stack relative w-full h-[550px] lg:h-full flex items-center justify-center lg:order-none order-1">
+            <div className="stack relative w-full h-[500px] lg:h-full flex items-center justify-center lg:order-none order-1 mt-4">
                 {currentCards.map((image, index) => {
                     const styleIndex = currentCards.length - 1 - index; 
                     const styles = cardStyles[styleIndex] || cardStyles[cardStyles.length - 1]; 
@@ -136,7 +136,7 @@ const Projects = () => {
                     return (
                         <div
                             key={image} 
-                            className={`card absolute transform-gpu w-[250px] h-[380px] sm:w-[450px] sm:h-[500px] rounded-[2rem] shadow-2xl transition-transform duration-600 ease-out`}
+                            className={`card absolute transform-gpu w-[280px] h-[300px] sm:w-[450px] sm:h-[500px] rounded-[2rem] shadow-2xl transition-transform duration-600 ease-out`}
                             style={{
                                 top: '',
                                 left: '',
@@ -153,7 +153,6 @@ const Projects = () => {
                 })}
             </div>
             
-            {/* Note: Custom CSS Keyframes for the 'swap' class must be added to your global stylesheet. */}
         </main>
     );
 };
