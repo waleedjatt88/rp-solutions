@@ -1,7 +1,6 @@
 // src/servicesData.js
 
-// IMPORTANT: Put your images in the 'src/assets' folder
-// and update the import paths below.
+
 import janitorialImg from '../assets/janitorial.png';
 import carpenterImg from '../assets/carpenter.png';
 import housekeeperImg from '../assets/house keeper.png';
@@ -10,6 +9,7 @@ import welderImg from '../assets/wellder.png';
 import poolCleaningImg from '../assets/pool cleaner.png';
 import plumberImg from '../assets/plumber.png';
 import electricianImg from '../assets/electrition.png';
+import itServicesImg from '../assets/ittech.png';
 
 export const services = [
   {
@@ -51,5 +51,10 @@ export const services = [
     name: 'Electrician Services',
     description: 'Reliable electrical services from installations to troubleshooting for homes and businesses.',
     image: electricianImg,
+  },
+  {
+    name: 'It  Services',
+    description: 'We specialize in creating impactful online experiences that boost your growth and conversions.Like making Portfolio websites,Corporate websites,Digital Marketing and many more.',
+    image: itServicesImg,
   },
 ];

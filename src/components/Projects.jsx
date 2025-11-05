@@ -5,14 +5,14 @@ import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion'; 
 
 import janitorialImage from '../assets/janitorial.png'; 
-import carpenterImage from '../assets/carpenter.png';
-import housekeeperImage from '../assets/house keeper.png';
-import acTechImage from '../assets/Ac tech.png';
-import welderImage from '../assets/wellder.png';
-import poolCleaningImage from '../assets/pool cleaner.png';
-import plumberImage from '../assets/plumber.png';
-import electricianImage from '../assets/electrition.png';
-import generalServicesImage from '../assets/general work.png';
+import carpenterImage from '../assets/Ac tech.png'; // Ac technician image
+import housekeeperImage from '../assets/wellder.png'; // Welder services image
+import acTechImage from '../assets/plumber.png'; // Plumber services image
+import welderImage from '../assets/pool cleaner.png';// Pool cleaning image
+import poolCleaningImage from '../assets/electrition.png';// Electrician services image
+import plumberImage from '../assets/govt.png';//Carpenter services image 
+import electricianImage from '../assets/houserenovation (1).png';// genral services image
+import generalServicesImage from '../assets/janitorialproject.png';// Janitorial services image
 
 const cardImages = [
     janitorialImage, 
@@ -27,15 +27,34 @@ const cardImages = [
 ];
 
 const contentData = [
-    { name: 'JANITORIAL SERVICES', text: 'Maintaining cleanliness and hygiene in offices, homes, and public spaces to create healthier environments. Our trained staff ensures top-quality cleaning for long-lasting impressions.' },
-    { name: 'CARPENTER SERVICES', text: 'Offering precision carpentry for repairs, installations, and custom furniture. Our experienced carpenters deliver results tailored to your needs with craftsmanship you can trust.' },
-    { name: 'HOUSE KEEPER SERVICES', text: 'Dedicated housekeeping services to keep your space organized, clean, and welcoming. Our reliable housekeepers work with attention to detail, ensuring your comfort.' },
-    { name: 'AC-TECHNICIAN SERVICES', text: 'Expert AC installation, maintenance, and repair services. We help maintain optimal cooling performance while saving on energy costs.' },
-    { name: 'WELDER SERVICES', text: 'High-quality welding solutions for various materials and structures. Our skilled welders ensure durability and safety in every project.' },
-    { name: 'POOL CLEANING', text: 'Comprehensive pool cleaning and maintenance services to keep your swimming area pristine and safe. From debris removal to water treatment, we handle it all.' },
-    { name: 'PLUMBER SERVICES', text: 'Prompt and professional plumbing services for repairs, Installations, and maintenance. We address inalo, blockages, and other issues to ensure smooth water flow.' },
-    { name: 'ELECTRICIAN SERVICES', text: 'Reliable electrical services from installations to troubleshooting. We ensure safe and efficient solutions for homes and businesses.' },
-    { name: 'GENERAL SERVICES', text: 'Offering a wide range of general maintenance services to meet various household and commercial needs. No task is too small or complex for our skilled team.' },
+        { name: 'CARPENTER SERVICES', text: 
+            'In August 2025, RP Solutions Private Limited successfully completed the furnishing work at Pakistan Council of Scientific & Industrial Research (PCSIR) Laboratory, Islamabad. The project included providing chairs, tables, glass installation, & curtains.' 
+        },
+        { name: 'GENERAL SERVICES', text:
+         'Project Delivered in Pakistan Town Islamabad. -Paint-Polish work -Electrical work -Wood Work -Carpenter -General Cleaning work  or a wide range of general maintenance services to meet various household and commercial needs. No task is too small or complex for our skilled team.#maintanance #project #houserenovation #clientclosed #islamabad #pakistan' 
+        },
+    { name: 'JANITORIAL SERVICES', text: 
+        'Maintaining cleanliness and hygiene in offices, homes, and public spaces to create healthier environments. Our trained staff ensures top-quality cleaning for long-lasting impressions.'
+     },
+    { name: 'HOUSE KEEPER SERVICES', text:
+         'Dedicated housekeeping services to keep your space organized, clean, and welcoming. Our reliable housekeepers work with attention to detail, ensuring your comfort.' 
+        },
+    { name: 'AC-TECHNICIAN SERVICES', text:
+         'Expert AC installation, maintenance, and repair services. We help maintain optimal cooling performance while saving on energy costs.' 
+        },
+    { name: 'WELDER SERVICES', text: 
+        'High-quality welding solutions for various materials and structures. Our skilled welders ensure durability and safety in every project.' 
+    },
+    { name: 'POOL CLEANING', text: 
+        'Comprehensive pool cleaning and maintenance services to keep your swimming area pristine and safe. From debris removal to water treatment, we handle it all.'
+     },
+    { name: 'PLUMBER SERVICES', text:
+         'Prompt and professional plumbing services for repairs, Installations, and maintenance. We address inalo, blockages, and other issues to ensure smooth water flow.' 
+        },
+    { name: 'ELECTRICIAN SERVICES', text:
+         'Reliable electrical services from installations to troubleshooting. We ensure safe and efficient solutions for homes and businesses.'
+         },
+    
 ];
 
 const cardStyles = [

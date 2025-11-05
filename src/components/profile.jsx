@@ -8,6 +8,7 @@ import partner1Image from '../assets/partner 1.jpg';
 import partner2Image from '../assets/partner 2.jpg'; 
 import partner3Image from '../assets/comp partner1.jpg'; 
 import logoImage from '../assets/comp partner 2.jpg'; 
+import partner4Image from '../assets/Capture2.PNG';
 
 
 const carouselData = [
@@ -50,7 +51,17 @@ fullDes: "We're delighted to extend our operations with a strong handshake to Me
         // des: 'Our Commitment: Best Service, Right Time, Right Solution.',
         image: logoImage, 
         type: 'Partner',
-fullDes: "At The Bridge Company, our name reflects our dedication to seamless transitions and unwavering support. We build sturdy connections between challenges and solutions, ensuring our clients can confidently cross any operational divide. We pride ourselves on creating clear pathways forward and anticipate a strong partnership with you."    },
+fullDes: "At The Bridge Company, our name reflects our dedication to seamless transitions and unwavering support. We build sturdy connections between challenges and solutions, ensuring our clients can confidently cross any operational divide. We pride ourselves on creating clear pathways forward and anticipate a strong partnership with you."   
+ },
+ {
+        name: 'Muhammad Ahmed',
+        title: 'Corporate Partner',
+        // des: 'Our Commitment: Best Service, Right Time, Right Solution.',
+        image: partner4Image, 
+        type: 'Partner',
+fullDes: 
+"As the CEO of We Are Together, Muhammad Ahmed champions a vision where collective effort fuels individual and organizational growth. With a deep belief in the power of mutual support, he fosters an environment where every team member contributes to and benefits from shared success."   
+ },
 ];
 
 
@@ -161,8 +172,8 @@ const Profile = () => {
     return (
         <div 
             id="profile" 
-            className="relative h-screen w-full flex items-center justify-center overflow-hidden" // Removed bg-gray-900
-            style={{ background: 'linear-gradient(145deg, #55566a 0%, #131318 76%)' }} // Added the gradient here
+            className="relative h-screen w-full flex items-center justify-center overflow-hidden" 
+            style={{ background: 'linear-gradient(145deg, #55566a 0%, #131318 76%)' }} 
         >
             
             <div className="relative w-full max-w-7xl h-[600px] md:h-[700px] lg:h-[800px]">
