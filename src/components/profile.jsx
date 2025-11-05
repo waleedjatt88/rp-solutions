@@ -9,8 +9,7 @@ import partner2Image from '../assets/partner 2.jpg';
 import partner3Image from '../assets/comp partner1.jpg'; 
 import logoImage from '../assets/comp partner 2.jpg'; 
 import partner4Image from '../assets/Capture2.PNG';
-
-
+// import partner5Image from '../assets/comp partner 4.jpg';
 const carouselData = [
     {
         name: ' Riffat Prince',

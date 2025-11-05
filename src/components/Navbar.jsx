@@ -7,15 +7,10 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-// Active Tab Color
 const ACTIVE_COLOR = '#ff9633'; 
-// Navigation Items List
 const NAV_ITEMS = ['HOME', 'ABOUT', 'PROJECTS', 'SERVICES', 'CONTACT', 'CORE'];
 
-// Header Gradient for Scrolled State (Matching your main background)
 const HEADER_SCROLLED_BG = 'bg-gray-800 shadow-md'; // Tailwind classes for gradient are too verbose, using a solid dark color for scroll
-// If you want gradient on scroll, you need to use a single color for the Header or custom CSS.
-// Using fixed dark color for better readability on scroll.
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +18,6 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState('home'); 
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // === Scroll Direction & Background Change Logic ===
   useEffect(() => {
     let ticking = false;
     
