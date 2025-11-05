@@ -67,7 +67,7 @@ const DetailsModal = ({ item, onClose }) => {
             >
                 <button 
                     onClick={onClose} 
-                    className="absolute top-4 right-4 text-gray-500 hover:text--[#ff9633] transition"
+                    className="absolute top-4 right-4 text-gray-500 hover:text-[#ff9633] transition"
                 >
                     <FaTimes className="w-6 h-6" />
                 </button>
