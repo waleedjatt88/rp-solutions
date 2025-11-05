@@ -93,8 +93,8 @@ const HeroSection = () => {
               smooth={true}
               offset={-70}
               duration={2000}
-              // Changed mt-4 to mt-2 for slightly less space
-              className="group relative inline-block mt-2 md-mt4
+              
+              className="group relative inline-block mt-2 md-mt-6
                           px-4 py-2 sm:px-8 sm:py-3
                           border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
             >
