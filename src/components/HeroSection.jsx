@@ -94,7 +94,7 @@ const HeroSection = () => {
               offset={-70}
               duration={2000}
               
-              className="group relative inline-block mt-2 md-mt-6
+              className="group relative inline-block mt-4 md-mt-6
                           px-4 py-2 sm:px-8 sm:py-3
                           border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
             >
