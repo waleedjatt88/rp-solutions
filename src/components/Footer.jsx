@@ -118,7 +118,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/share/p/1Bog2PJqEK/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaFacebookF className="text-white" />
               </a>
-              <a href="https://wa.me/923140840821" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
+              <a href="https://wa.me/923345477738" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9633] transition-all duration-300 active:scale-90">
                 <FaWhatsapp className="text-white" />
               </a>
             </div>
@@ -127,7 +127,8 @@ export default function Footer() {
         </div>
         
         <div className="mt-14 pt-8 border-t border-gray-700 text-center">
-          <p>&copy; {new Date().getFullYear()} All rights reserved. .</p>
+          <p>&copy; {new Date().getFullYear()} All rights reserved.Rp Solutions Pvt.Ltd</p>
+          <p className="mt-2 text-m">Software Engineer <a href="mailto:Sendtomadnan@gmail.com" className="hover:text-[#ff9633] transition-colors text-sm">Sendtomadnan@gmail.com</a></p>
         </div>
 
       </div>

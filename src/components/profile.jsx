@@ -9,7 +9,8 @@ import partner2Image from '../assets/partner 2.jpg';
 import partner3Image from '../assets/comp partner1.jpg'; 
 import logoImage from '../assets/comp partner 2.jpg'; 
 import partner4Image from '../assets/Capture2.PNG';
-// import partner5Image from '../assets/comp partner 4.jpg';
+import directorImge from '../assets/director.png'
+import managerImge from '../assets/manager.jpg';
 const carouselData = [
     {
         name: ' Riffat Prince',
@@ -18,6 +19,24 @@ const carouselData = [
         image: ceoImage,
         type: 'CEO',
         fullDes: " A visionary leader with 05+ years of strategic experience, driving the company towards innovation and excellence Our CEO's commitment to integrity and client-centric solutions has been the cornerstone of RP Solutions' success. They foster a culture of continuous learning and growth, ensuring our team is always at the forefront of the industry. The long-term vision includes expanding our reach into global markets and investing heavily in sustainable technologies."
+    },
+    {
+        name: ' Ashknaz waris',
+        title: 'Director',
+        // des: 'A visionary leader with 05+ years of strategic experience, driving the company towards innovation and excellence.',
+        image: directorImge,
+        type: 'Director',
+        fullDes: 
+        "A director, on the other hand, usually holds a more senior position and has a broader scope of responsibility, often spanning multiple departments or even an entire division or region. Directors are more focused on strategic planning, setting long-term goals, and ensuring that the overall vision of the organization is being met. They make higher-level decisions, develop policies, and are accountable for the performance and direction of their respective areas. While a manager focuses on how to achieve immediate goals, a director focuses on what those long-term goals should be and why they are important for the organization's success"
+    },
+    {
+        name: ' Stephen Gill Manager',
+        title: 'Manager',
+        // des: 'A visionary leader with 05+ years of strategic experience, driving the company towards innovation and excellence.',
+        image: managerImge,
+        type: 'Manager',
+        fullDes: 
+"A manager is typically responsible for overseeing the daily operations of a specific team or department. Their primary focus is on executing strategies, delegating tasks, monitoring performance, and ensuring that their team meets its goals. Managers often act as a crucial link between the staff and higher leadership, translating broader organizational objectives into actionable plans for their team. They are involved in problem-solving, resource allocation within their department, and fostering a productive work environment"
     },
     {
         name: 'Jinglecred ',
