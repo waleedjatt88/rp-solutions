@@ -53,7 +53,9 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="absolute bottom-16 md:bottom-28 left-1/2 -translate-x-1/2 text-center text-white z-10 w-full px-4">
+      {/* Adjusted bottom for mobile to push content higher */}
+      {/* Removed mt-[-4rem] from h1 and rely on 'bottom' of parent div */}
+      <div className="absolute bottom-32 md:bottom-28 left-1/2 -translate-x-1/2 text-center text-white z-10 w-full px-4">
         <motion.div
           variants={textContainerVariants}
           initial="hidden"
@@ -61,7 +63,7 @@ const HeroSection = () => {
         >
           <motion.h1
             variants={textItemVariants}
-            className="text-3xl md:text-6xl font-extrabold my-4"
+            className="text-3xl md:text-6xl font-extrabold my-4" // Removed mt-[-4rem]
           >
             Your Complete Service Partner
           </motion.h1>
@@ -91,8 +93,9 @@ const HeroSection = () => {
               smooth={true}
               offset={-70}
               duration={2000}
-              className="group relative inline-block mt-4
-                          px-4 py-2 sm:px-8 sm:py-3   // Mobile: px-4 py-2 (smaller), SM+: px-8 py-3 (original/larger)
+              // Changed mt-4 to mt-2 for slightly less space
+              className="group relative inline-block mt-2
+                          px-4 py-2 sm:px-8 sm:py-3
                           border-2 border-white rounded-full transition-colors font-semibold cursor-pointer overflow-hidden"
             >
               <span
@@ -102,7 +105,7 @@ const HeroSection = () => {
 
               <span
                 className="relative z-10 transition-colors duration-500 group-hover:text-black
-                          text-xs sm:text-base  // Mobile: text-xs (smaller), SM+: text-base (original)
+                          text-xs sm:text-base
                 "
               >
                 EXPLORE SERVICES
@@ -112,7 +115,8 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-4 md:bottom-2 left-1/2 -translate-x-1/2 z-10">
+      {/* Adjusted bottom for floating button. Kept it a bit higher */}
+      <div className="absolute bottom-8 md:bottom-4 left-1/2 -translate-x-1/2 z-10">
         <ScrollLink
           to="profile"
           spy={true}
@@ -133,7 +137,7 @@ const HeroSection = () => {
               repeatType: "loop"
             }}
           >
-            <FaAngleDown className="w-6 h-6" style={{ color: '#ff9633' }} /> 
+            <FaAngleDown className="w-6 h-6" style={{ color: '#ff9633' }} />
           </motion.div>
         </ScrollLink>
       </div>
