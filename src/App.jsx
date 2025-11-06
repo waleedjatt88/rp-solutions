@@ -3,7 +3,8 @@ import LoadingScreen from "./components/loadingscreen";
 
 import HeroSection from "./components/HeroSection";
 import ContactSection from "./components/ContactSection";
-import Header from "./components/Navbar";
+import Header from "./components/Navbar"; 
+import Logo from "./components/logo";    
 import Footer from "./components/Footer";
 import AboutSection from "./components/AboutSection";
 import Services from "./components/Services";
@@ -13,11 +14,11 @@ import Projects from './components/Projects';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true); 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); 
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,14 +29,19 @@ function App() {
         <LoadingScreen />
       ) : (
         <>
-          <Header />
+          {/* Render the Logo component */}
+          <Logo isHeaderHidden={!isHeaderVisible} />
+
+          {/* Pass the state setter to the Header component */}
+          <Header onVisibilityChange={setIsHeaderVisible} />
+
           <main>
             <HeroSection />
-           <Profile/>
+            <Profile />
             <AboutSection />
             <Services />
             <ContactSection />
-              <Projects/>
+            <Projects />
             <OurValues />
           </main>
           <Footer />

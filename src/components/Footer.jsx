@@ -39,7 +39,6 @@ export default function Footer() {
   };
 
   return (
-    // Footer background updated with the gradient
     <footer 
         className="text-gray-400 py-16"
         style={{ background: 'linear-gradient(145deg, #55566a 0%, #131318 76%)' }}
@@ -49,8 +48,8 @@ export default function Footer() {
           
           <div>
             <h3 className="text-3xl font-bold mb-4">
-              <span className="text-gray-200">RP</span> {/* Text color made lighter for better contrast on dark gradient */}
-              <span className="text-[#ff9633]"> Solutions</span> {/* Assuming your portfolio is RP Solutions now */}
+              <span className="text-gray-200">RP</span> 
+              <span className="text-[#ff9633]"> Solutions</span> 
             </h3>
             <div className="pr-4 text-sm text-justify leading-relaxed space-y-4">
               <p>WE BELIEVE IN PROVIDING RELIABLE AND EFFICIENT SERVICES THAT ELEVATE THE STANDARD OF LIVING FOR OUR CLIENTS.</p>
@@ -128,7 +127,7 @@ export default function Footer() {
         
         <div className="mt-14 pt-8 border-t border-gray-700 text-center">
           <p>&copy; {new Date().getFullYear()} All rights reserved.Rp Solutions Pvt.Ltd</p>
-          <p className="mt-2 text-m">Software Engineer <a href="mailto:Sendtomadnan@gmail.com" className="hover:text-[#ff9633] transition-colors text-sm">Sendtomadnan@gmail.com</a></p>
+          <p className="mt-2 text-sm">Make by <a href="mailto:Sendtomadnan@gmail.com" className="hover:text-[#ff9633] transition-colors text-xsm">Sendtomadnan@gmail.com</a></p>
         </div>
 
       </div>
