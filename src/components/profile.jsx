@@ -74,7 +74,7 @@ fullDes: "At The Bridge Company, our name reflects our dedication to seamless tr
  {
         name: 'Muhammad Ahmed',
         title: 'Corporate Partner',
-        // des: 'Our Commitment: Best Service, Right Time, Right Solution.',
+        des: '(WAT) We Are Together',
         image: partner4Image, 
         type: 'Partner',
 fullDes: 
