@@ -125,14 +125,14 @@ export default function Footer() {
 
         </div>
         
-        <div className="mt-14 pt-8 border-t border-gray-700 text-center text-gray-400"> {/* Added default text-gray-400 for general footer text */}
+        <div className="mt-14 pt-8 border-t border-gray-700 text-center text-gray-400">
   <p className="text-sm md:text-base"> 
     &copy; {new Date().getFullYear()}{' '}
-    <span className="text-gray-300 text-sm md:text-base">Rp</span> {/* Rp in gray-300 */}
-    <span className="text-[#ff9633] text-sm md:text-base"> Solutions</span> {/* Solutions in active color */}
-    <span className="text-xs md:text-sm"> Pvt.Ltd</span> {/* Pvt.Ltd smaller */}
+    <span className="text-gray-300 text-sm md:text-base">Rp</span> 
+    <span className="text-[#ff9633] text-sm md:text-base"> Solutions</span> 
+    <span className="text-xs md:text-sm"> Pvt.Ltd</span> 
   </p>
-  <p className="mt-2 text-xs md:text-sm"> {/* Base text size, larger on desktop */}
+  <p className="mt-2 text-xs md:text-sm"> 
     Made by{' '}
     <a href="mailto:Sendtomadnan@gmail.com" className="hover:text-[#ff9633] transition-colors text-xs md:text-sm">
       Sendtomadnan@gmail.com
