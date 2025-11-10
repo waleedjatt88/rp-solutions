@@ -29,10 +29,7 @@ function App() {
         <LoadingScreen />
       ) : (
         <>
-          {/* Render the Logo component */}
           <Logo isHeaderHidden={!isHeaderVisible} />
-
-          {/* Pass the state setter to the Header component */}
           <Header onVisibilityChange={setIsHeaderVisible} />
 
           <main>

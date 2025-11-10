@@ -6,7 +6,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaArrowRight } from 'react-icon
 // Is component ko aap apne App.js mein istemal kar sakte hain
 const ContactSection = () => {
   const phoneNumber = '03345477738'; // Phone number variable
-  const location = 'SHOP NO. 02. BASEMENT 02 BLOCPERVAIZ MARKET SECTOR C-8/4 ISLAMABAD'; 
+  const location = 'SHOP NO. 02, BASEMENT 02 BLOCk III PERVAIZ MARKET SECTOR G-8/4 ISLAMABAD'; 
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-white">
