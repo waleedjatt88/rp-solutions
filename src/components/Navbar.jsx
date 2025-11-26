@@ -153,7 +153,7 @@ const Header = ({ onVisibilityChange }) => {
         fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${headerVisibilityClass}
         ${isScrolled
           ? 'text-gray-200'
-          : 'text-gray-300' // Text color for the top header
+          : 'text-gray-300' 
         }
         h-[60px]
         md:h-[63px]
@@ -193,7 +193,7 @@ const Header = ({ onVisibilityChange }) => {
           })}
         </div>
 
-        {/* Mobile Hamburger Icon (Visible on small screens) */}
+        
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="focus:outline-none">
             <svg
