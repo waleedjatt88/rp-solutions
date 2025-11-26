@@ -34,8 +34,7 @@ const contentData = [
          'Project Delivered in Pakistan Town Islamabad. -Paint-Polish work -Electrical work -Wood Work -Carpenter -General Cleaning work  or a wide range of general maintenance services to meet various household and commercial needs. No task is too small or complex for our skilled team.#maintanance #project #houserenovation #clientclosed #islamabad #pakistan' 
         },
     { name: 'JANITORIAL SERVICES', text: 
-        'Maintaining cleanliness and hygiene in offices, homes, and public spaces to create healthier environments. Our trained staff ensures top-quality cleaning for long-lasting impressions.'
-     },
+'Providing top-quality cleaning services across Islamabad, Rawalpindi, and Lahore — including house cleaning, office cleaning, dusting, gardening, and solar panel cleaning. Our trained team ensures a hygienic, fresh, and spotless environment every time.'     },
     { name: 'HOUSE KEEPER SERVICES', text:
          'Dedicated housekeeping services to keep your space organized, clean, and welcoming. Our reliable housekeepers work with attention to detail, ensuring your comfort.' 
         },
